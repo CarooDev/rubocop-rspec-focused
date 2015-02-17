@@ -2,18 +2,43 @@
 
 RuboCop lint for focused specs.
 
+It finds `focus: true` and the following method calls:
+
+  * focus
+  * fexample
+  * fit
+  * fspecify
+  * fcontext
+  * fdescribe
+
 ```ruby
 # bad
 fit 'does something' do
   expect(foo).to be_empty
 end
 
-it 'does something', focus: true do
+fdescribe Something do
+  it 'does something' do
+    expect(foo).to be_empty
+  end
+end
+
+specify 'does something', focus: true do
   expect(foo).to be_empty
 end
 
 # good
 it 'does something' do
+  expect(foo).to be_empty
+end
+
+describe Something do
+  it 'does something' do
+    expect(foo).to be_empty
+  end
+end
+
+specify 'does something' do
   expect(foo).to be_empty
 end
 ```
