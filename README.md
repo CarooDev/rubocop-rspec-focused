@@ -4,12 +4,12 @@ RuboCop lint for focused specs.
 
 It finds `focus: true` and the following method calls:
 
-  * focus
-  * fexample
-  * fit
-  * fspecify
-  * fcontext
-  * fdescribe
+  * `focus`
+  * `fexample`
+  * `fit`
+  * `fspecify`
+  * `fcontext`
+  * `fdescribe`
 
 ```ruby
 # bad
