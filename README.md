@@ -23,14 +23,14 @@ end
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rubocop-rspec-focused'
+gem 'rubocop-rspec-focused', require: false
 ```
 
 And then execute:
 
     $ bundle
 
-And add this to .rubocop.yml:
+And add this to your `.rubocop.yml`:
 
 ```yml
 require:
