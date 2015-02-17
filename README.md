@@ -1,6 +1,6 @@
 # rubocop-rspec-focused
 
-Cop for focused specs.
+RuboCop lint for focused specs.
 
 ```ruby
 # bad
