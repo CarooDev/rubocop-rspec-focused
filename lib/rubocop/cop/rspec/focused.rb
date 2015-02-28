@@ -28,7 +28,7 @@ module RuboCop
 
         def on_block(node)
           method, _args, _body = *node
-          _receiver, method_name, _object, metadata = *method
+          _receiver, method_name, _object, *metadata = *method
 
           if FOCUSED_METHODS.include?(method_name) || focus_set_to_true?(metadata)
             add_offense(node, :expression, MESSAGE)
@@ -38,9 +38,12 @@ module RuboCop
         private
 
         def focus_set_to_true?(metadata)
-          metadata && metadata.children.any? do |pair|
-            pair == s(:pair, s(:sym, :focus), s(:true))
-          end
+          return unless metadata
+
+          metadata.include?(s(:sym, :focus)) ||
+            metadata.last.children.any? do |pair|
+              pair == s(:pair, s(:sym, :focus), s(:true))
+            end
         end
       end
     end

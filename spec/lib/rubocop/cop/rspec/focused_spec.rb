@@ -23,4 +23,13 @@ RSpec.describe RuboCop::Cop::RSpec::Focused do
     expect(cop.offenses.map(&:line).sort).to eq([1])
     expect(cop.messages).to eq([described_class::MESSAGE])
   end
+
+  it 'finds an example with :focus' do
+    inspect_source(cop, ['it "does something", :js, :focus do',
+                         '  expect(foo).to be_empty',
+                         'end'])
+    expect(cop.offenses.size).to eq(1)
+    expect(cop.offenses.map(&:line).sort).to eq([1])
+    expect(cop.messages).to eq([described_class::MESSAGE])
+  end
 end

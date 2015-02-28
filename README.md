@@ -27,6 +27,10 @@ specify 'does something', focus: true do
   expect(foo).to be_empty
 end
 
+specify 'does something', :focus do
+  expect(foo).to be_empty
+end
+
 # good
 it 'does something' do
   expect(foo).to be_empty
