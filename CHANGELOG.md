@@ -1,5 +1,7 @@
 ## master (unreleased)
 
+## 0.0.2
+
 * Support symbols passed as metadata, e.g:
 
         describe 'foo', :focus do
