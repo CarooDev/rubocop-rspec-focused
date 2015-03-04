@@ -1,5 +1,7 @@
 # rubocop-rspec-focused
 
+[![Build Status](https://travis-ci.org/lovewithfood/rubocop-rspec-focused.svg?branch=master)](https://travis-ci.org/lovewithfood/rubocop-rspec-focused)
+
 RuboCop lint for focused specs.
 
 It finds `focus: true` and the following method calls:
