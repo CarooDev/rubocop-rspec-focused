@@ -1,5 +1,7 @@
 ## master (unreleased)
 
+* Fix error when block method has no arguments.
+
 ## 0.0.2
 
 * Support symbols passed as metadata, e.g:

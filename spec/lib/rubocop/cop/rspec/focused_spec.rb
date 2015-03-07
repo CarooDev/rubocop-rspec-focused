@@ -32,4 +32,13 @@ RSpec.describe RuboCop::Cop::RSpec::Focused do
     expect(cop.offenses.map(&:line).sort).to eq([1])
     expect(cop.messages).to eq([described_class::MESSAGE])
   end
+
+  it 'does not raise error on block without arguments' do
+    inspect_source(cop, ['it "does something" do',
+                         '  expect(foo).to be_empty',
+                         'end'])
+    expect(cop.offenses.size).to eq(0)
+    expect(cop.offenses.map(&:line).sort).to be_empty
+    expect(cop.messages).to be_empty
+  end
 end
