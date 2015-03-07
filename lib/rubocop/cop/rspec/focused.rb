@@ -40,10 +40,12 @@ module RuboCop
         def focus_set_to_true?(metadata)
           return unless metadata
 
-          metadata.include?(s(:sym, :focus)) ||
+          metadata.include?(s(:sym, :focus)) || (
+            metadata.last &&
             metadata.last.children.any? do |pair|
               pair == s(:pair, s(:sym, :focus), s(:true))
             end
+          )
         end
       end
     end
