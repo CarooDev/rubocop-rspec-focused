@@ -1,5 +1,7 @@
 ## master (unreleased)
 
+## 0.0.3
+
 * Fix error when block method has no arguments.
 
 ## 0.0.2
