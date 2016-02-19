@@ -78,3 +78,10 @@ Rspec/Focused:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+
+For running the spec files, this project depends on RuboCop's spec helpers. This means that in order to run the specs locally, you need a (shallow) clone of the RuboCop repository:
+
+```bash
+git submodule update --init --depth 1 vendor/rubocop
+```
