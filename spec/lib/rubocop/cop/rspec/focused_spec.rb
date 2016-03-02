@@ -15,6 +15,19 @@ RSpec.describe RuboCop::Cop::RSpec::Focused do
     end
   end
 
+  (described_class::FOCUSED_METHODS - [:focus]).each do |method|
+    it "autocorrects #{method}" do
+      source = ["#{method} 'does something' do", '  expect(foo).to be_empty', 'end']
+
+      expected_source = [
+        "#{method[1..-1]} 'does something' do", '  expect(foo).to be_empty', 'end'
+      ].join("\n")
+
+      autocorrected_source = autocorrect_source(cop, source)
+      expect(autocorrected_source).to eq(expected_source)
+    end
+  end
+
   it 'finds an example with focus: true' do
     inspect_source(cop, ['it "does something", foo: bar, focus: true do',
                          '  expect(foo).to be_empty',

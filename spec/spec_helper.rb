@@ -1,7 +1,10 @@
-require File.join(
-  Gem::Specification.find_by_name('rubocop').gem_dir,
-  'spec/support', 'cop_helper.rb'
-)
+project_path = File.join(File.dirname(__FILE__), '..')
+rubocop_path = File.join(project_path, 'vendor/rubocop')
+unless File.directory?(rubocop_path)
+  raise "Can't run specs without a local RuboCop checkout. Look in the README."
+end
+
+require "#{rubocop_path}/spec/support/cop_helper.rb"
 
 Dir['spec/support/**/*.rb'].each { |f| require f.sub(/\Aspec\//, '') }
 

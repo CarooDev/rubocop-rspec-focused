@@ -35,6 +35,19 @@ module RuboCop
           end
         end
 
+        def autocorrect(node)
+          method, _args, _body = *node
+          method_source = method.loc.selector.source
+          return if method_source == 'focus'
+
+          range = Parser::Source::Range.new(node.source_range.source_buffer,
+                                            method.loc.selector.begin_pos,
+                                            method.loc.selector.end_pos)
+          -> (corrector) do
+            corrector.replace(range, method_source[1..-1])
+          end
+        end
+
         private
 
         def focus_set_to_true?(metadata)
