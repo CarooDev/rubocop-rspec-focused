@@ -1,5 +1,7 @@
 ## master (unreleased)
 
+* Add autocorrect except for focus.
+
 ## 0.0.3
 
 * Fix error when block method has no arguments.
