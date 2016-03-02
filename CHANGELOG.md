@@ -1,5 +1,7 @@
 ## master (unreleased)
 
+## 0.1.0
+
 * Add autocorrect except for focus.
 
 ## 0.0.3
