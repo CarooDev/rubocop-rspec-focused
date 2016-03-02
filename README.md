@@ -80,7 +80,9 @@ Rspec/Focused:
 5. Create a new Pull Request
 
 
-For running the spec files, this project depends on RuboCop's spec helpers. This means that in order to run the specs locally, you need a (shallow) clone of the RuboCop repository:
+For running the spec files, this project depends on RuboCop's spec helpers.
+This means that in order to run the specs locally, you need a (shallow) clone
+of the RuboCop repository:
 
 ```bash
 # Git 2.7 and below:
