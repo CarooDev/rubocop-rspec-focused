@@ -67,7 +67,7 @@ And add this to your `.rubocop.yml`:
 require:
   - rubocop/rspec/focused
 
-Rspec/Focused:
+RSpec/Focused:
   Enabled: true
 ```
 
