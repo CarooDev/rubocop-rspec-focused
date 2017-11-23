@@ -31,7 +31,7 @@ module RuboCop
           _receiver, method_name, _object, *metadata = *method
 
           if FOCUSED_METHODS.include?(method_name) || focus_set_to_true?(metadata)
-            add_offense(node, :expression, MESSAGE)
+            add_offense(node, location: :expression, message: MESSAGE)
           end
         end
 
