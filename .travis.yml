@@ -11,4 +11,7 @@ cache: bundler
 
 bundler_args: --without dev --jobs=3
 
+before_install:
+  - gem update --system
+
 script: bundle exec rspec spec
