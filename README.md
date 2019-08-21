@@ -4,7 +4,7 @@
 
 RuboCop lint for focused specs.
 
-Note: This functionality has also been implemented in the more general [rubocop-rspec](https://github.com/backus/rubocop-rspec) gem (as [RSpec/Focus](https://github.com/backus/rubocop-rspec/blob/master/lib/rubocop/cop/rspec/focus.rb)).
+***WARNING: We are no longer maintaining this gem, and will eventually archive this repo. We recommend you use [rubocop-rspec](https://github.com/rubocop-hq/rubocop-rspec) instead.***
 
 This gem finds `focus: true` and the following method calls:
 
